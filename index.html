@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./IP_Subnet_Cal.css">
+  <script src="./IP_Subnet_Cal.js"></script>
+
+  <title>IP Subnet Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+
+
+  <div class="panel panel-default">
+    <p class="panel-heading" id="Topic">IP Subnet Calculator</p>
+    <hr >
+    <table class="panel-body">
+      <form id="form_network_class" action="javascript:change_subnet();">
+        <tr>
+          <td id="table-1-L">
+            NETWORK CLASS
+          </td>
+          <td id="table-1-R">
+            <input name="network_class" type="radio" value="any" onclick="this.form.submit();" checked> ANY
+            <input name="network_class" type="radio" value="A" onclick="this.form.submit();" style="margin-left:10px"> A
+            <input name="network_class" type="radio" value="B" onclick="this.form.submit();" style="margin-left:10px"> B
+            <input name="network_class" type="radio" value="C" onclick="this.form.submit();" style="margin-left:10px"> C
+          </td>
+        </tr>
+      </form>
+      <form id="form_calculate" action="javascript:get_result();">
+        <tr>
+          <td id="table-1-L">
+            SUBNET
+          </td>
+          <td id="table-1-R" >
+            <select class="decorated"name="subnet" id="subnet" >
+              <script> javascript:createChoice(1); </script>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td id="table-1-L">
+            IP ADDRESS
+          </td>
+          <td id="table-1-R">
+            <input id="IP_Address" type="text" value="255.255.255.255" pattern="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)">
+          </td>
+        </tr>
+        <tr><td><button type="submit" class='button -regular'> CALCULATE </button><td></tr>
+      </form>
+    </table>
+  </div>
+
+  <div class="row" id="result">
+    <div id="div-table-2" >
+    </div>
+
+    <div id="div-table-3" >
+    </div>
+  </div>
+
+</body>
+
+</html>
