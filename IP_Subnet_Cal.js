@@ -32,15 +32,15 @@ function change_subnet() {
 }
 
 function createChoice(end) {
-  var select = document.getElementById("Subnet");
+  var select = document.getElementById("subnet");
   while (select.firstChild) {
     select.removeChild(select.firstChild);
   }
   for (var start = 32; start >= end; start--) {
-    var option = document.createElement("Option");
+    var option = document.createElement("option");
     option.value = start;
     var ip = find_IP(start);
-    var node = document.createTextNode( ip + " / " + start);
+    var node = document.createTextNode( ip + "   /   " + start);
     option.appendChild(node);
     select.appendChild(option);
   }
